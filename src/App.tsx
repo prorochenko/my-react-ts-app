@@ -1,15 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import TodoList from './components/TodoList';
+import AddTodo from './components/AddTodo';
+
+const App: React.FC = () => {
+  const todos = [
+    { id: '1', title: 'text' },
+    { id: '2', title: 'text' },
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <TodoList todos={todos} />
+        <AddTodo />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -21,6 +25,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
