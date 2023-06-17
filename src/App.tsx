@@ -9,6 +9,7 @@ const App: React.FC = () => {
   //   { id: '1', title: 'text' },
   //   { id: '2', title: 'text' },
   // ];
+
   const [todos, setTodos] = useState<IItem[]>([]);
 
   function todoAddHandler(todo: IItem) {
