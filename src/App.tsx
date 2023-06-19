@@ -5,11 +5,6 @@ import AddTodo from './components/AddTodo';
 import { IItem } from './types/todo';
 
 const App: React.FC = () => {
-  // const todos = [
-  //   { id: '1', title: 'text' },
-  //   { id: '2', title: 'text' },
-  // ];
-
   const [todos, setTodos] = useState<IItem[]>([]);
 
   function todoAddHandler(todo: IItem) {
