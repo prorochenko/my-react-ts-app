@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setStatusUser } from '../../redux/authSlice';
 import { selectIsLoggedIn } from '../../redux/authSelectors';
 
-const RegisterForm: React.FC = () => {
+export const LoginForm: React.FC = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  console.log(isLoggedIn);
+  console.log('login', isLoggedIn);
 
   const handleLogin = () => {
     dispatch(setStatusUser(true));
@@ -17,10 +17,8 @@ const RegisterForm: React.FC = () => {
     <div>
       <input type="text" />
       <button type="button" onClick={handleLogin}>
-        Register
+        Login
       </button>
     </div>
   );
 };
-
-export default RegisterForm;

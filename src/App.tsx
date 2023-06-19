@@ -1,47 +1,33 @@
-import React, { useState } from 'react';
+import React, { lazy } from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
-import TodoList from './components/TodoList';
-import AddTodo from './components/AddTodo';
-import { IItem } from './types/todo';
+import Layout from './components/Layout/Layout';
+import { selectIsLoggedIn } from './redux/authSelectors';
+import RegisterForm from './components/RegisterForm/RegisterForm';
+
+const Login = lazy(() => import('./pages/login'));
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState<IItem[]>([]);
+  // const [todos, setTodos] = useState<IItem[]>([]);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  function todoAddHandler(todo: IItem) {
-    setTodos(prevTodos => {
-      return [
-        ...prevTodos,
-        {
-          id: Math.random().toString(),
-          title: todo.title,
-        },
-      ];
-    });
-  }
-
-  function todoRemoveHandler(id: string): void {
-    setTodos(prevTodos => {
-      return prevTodos.filter(item => {
-        return item.id !== id;
-      });
-    });
-  }
+  console.log('app', isLoggedIn);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <AddTodo onAddTodo={todoAddHandler} />
-        <TodoList todos={todos} onRemoveTodo={todoRemoveHandler} />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* <Route index element={<Navigate to="/login" />} /> */}
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<RegisterForm />} />
+          {/* <Route path="calculator" element={<Calculator />} /> */}
+          {/* <Route path="diary" element={<Diary />} /> */}
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+        {/* чи зробити тут сторінку 404? в path * */}
+      </Routes>
+    </>
   );
 };
 
