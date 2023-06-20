@@ -14,7 +14,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <h1 className={css.header}>The dullest pencil is better than the sharpest memory</h1>
+      <div className={css.mainBox}>
+        <h1 className={css.header}>The dullest pencil is better than the sharpest memory</h1>
+        <div className={css.box}>
+          <div className={css.box__picture}></div>
+        </div>
+      </div>
     </>
   );
 };

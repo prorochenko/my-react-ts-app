@@ -18,7 +18,7 @@ export const LoginForm: React.FC = () => {
 
   return (
     <div className={css.mainBox}>
-      <div>
+      <div className={css.elements}>
         <p className={css.title}>Log in</p>
         <form autoComplete="off">
           <div className={css.inputList}>
@@ -45,14 +45,13 @@ export const LoginForm: React.FC = () => {
           <button className={css.button} type="button" onClick={handleLogin}>
             Login
           </button>
-          <p>
-            Don't have an account?
-            <button>
-              <NavLink className={css.btnTransperent} to="/login">
-                Register
-              </NavLink>
-            </button>
-          </p>
+          <div className={css.bottomTextBox}>
+            <p className={css.bottomTextBox__text}>Don't have an account?</p>
+
+            <NavLink className={css.bottomBtn} to="/Register">
+              Register
+            </NavLink>
+          </div>
         </form>
       </div>
     </div>

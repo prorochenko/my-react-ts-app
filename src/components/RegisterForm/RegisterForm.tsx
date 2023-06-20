@@ -17,43 +17,44 @@ const RegisterForm: React.FC = () => {
 
   return (
     <div className={css.mainBox}>
-      <p className={css.title}>Create Account</p>
-      <form autoComplete="off">
-        <div className={css.inputList}>
-          <label htmlFor="Full Name">
-            <input className={css.input} required type="text" placeholder="Full Name" />
-          </label>
-          <label htmlFor="email">
-            <input
-              required
-              className={css.input}
-              autoComplete="email"
-              type="email"
-              name="email"
-              placeholder="E-mail Address "
-            />
-          </label>
-          <label htmlFor="password">
-            <input
-              required
-              className={css.input}
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-          </label>
-        </div>
-        <button className={css.button} type="button" onClick={handleLogin}>
-          Register
-        </button>
-
-        <p>
-          Already have an account ?
-          <NavLink className={css.btnTransperent} to="/login">
-            Login
-          </NavLink>
-        </p>
-      </form>
+      <div className={css.elements}>
+        <p className={css.title}>Create Account</p>
+        <form autoComplete="off">
+          <div className={css.inputList}>
+            <label htmlFor="Full Name">
+              <input className={css.input} required type="text" placeholder="Full Name" />
+            </label>
+            <label htmlFor="email">
+              <input
+                required
+                className={css.input}
+                autoComplete="email"
+                type="email"
+                name="email"
+                placeholder="E-mail Address "
+              />
+            </label>
+            <label htmlFor="password">
+              <input
+                required
+                className={css.input}
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </label>
+          </div>
+          <button className={css.button} type="button" onClick={handleLogin}>
+            Register
+          </button>
+          <div className={css.bottomTextBox}>
+            <p className={css.bottomTextBox__text}>Already have an account ?</p>
+            <NavLink className={css.bottomBtn} to="/login">
+              Login
+            </NavLink>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -8,18 +8,27 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 1;
+}
+
+.elements {
+  margin-top: 170px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 .title {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 42px;
   line-height: 42px;
-  /* identical to box height, or 131% */
-
   letter-spacing: 0.08em;
   color: var(--title-color);
+
+  margin-bottom: 50px;
 }
 
 .input {
@@ -37,9 +46,16 @@
   outline: none;
 }
 
+.inputList {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
 .button {
   @extend %btnTiffany;
-  width: 300px;
+  width: 200px;
   height: 60px;
   font-family: 'Poppins';
   font-style: normal;
@@ -50,12 +66,19 @@
 
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
-.inputList {
+.bottomTextBox {
   display: flex;
-  flex-direction: column;
+  gap: 5px;
+  &__text {
+    font-size: 12px;
+  }
+}
 
-  align-items: center;
+.bottomBtn {
+  color: var(--bottom-btn-color);
+  font-size: 12px;
 }

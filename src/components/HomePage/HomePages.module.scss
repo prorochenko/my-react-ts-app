@@ -12,3 +12,18 @@
 
   width: 600px;
 }
+
+.box {
+  position: relative;
+  &__picture {
+    background-image: url(../../assets/images/Vector.png);
+    background-position: 0px;
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 562px;
+    height: 491px;
+    top: 30px;
+    right: -130px;
+    z-index: 2;
+  }
+}
