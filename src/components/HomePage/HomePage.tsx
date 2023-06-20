@@ -14,7 +14,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className={css.header}>The dullest pencil is better than the sharpest memory</div>
+      <h1 className={css.header}>The dullest pencil is better than the sharpest memory</h1>
     </>
   );
 };

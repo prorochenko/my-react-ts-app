@@ -1,8 +1,8 @@
-%btnOrange {
+%btnTiffany {
   cursor: pointer;
-  background: #fc842d;
-  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
-  border-radius: 30px;
+  background: #a4d9dc;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -20,11 +20,11 @@
   transform: translate(0, 0);
 
   &:hover:not(.active) {
-    box-shadow: 0px 3px 15px 1px rgba(252, 132, 45, 0.7);
+    box-shadow: 0px 3px 15px 1px #7ecace;
   }
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0px 4px 13px 1px rgba(252, 132, 45, 0.5);
+    box-shadow: 0px 4px 13px 1px #c1e2e4;
   }
 }
 
