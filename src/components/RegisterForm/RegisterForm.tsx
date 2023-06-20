@@ -10,20 +10,35 @@ const RegisterForm: React.FC = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  const handleLogin = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+
+    const form = e.currentTarget as HTMLFormElement;
+    const fullName = form.elements.namedItem('Full-Name') as HTMLInputElement;
+    const emailInput = form.elements.namedItem('email') as HTMLInputElement;
+    const passwordInput = form.elements.namedItem('password') as HTMLInputElement;
+    console.log(
+      'fullName',
+      fullName.value,
+      'email:',
+      emailInput.value,
+      'password:',
+      passwordInput.value
+    );
     dispatch(setStatusUser(true));
+    form.reset();
   };
 
   return (
     <div className={css.mainBox}>
       <div className={css.elements}>
         <p className={css.title}>Create Account</p>
-        <form autoComplete="off">
+        <form onSubmit={handleSubmit} autoComplete="off">
           <div className={css.inputList}>
             <label htmlFor="Full Name">
               <input
                 className={css.input}
-                id="Full Name"
+                id="Full-Name"
                 required
                 type="text"
                 placeholder="Full Name"
@@ -51,7 +66,7 @@ const RegisterForm: React.FC = () => {
               />
             </label>
           </div>
-          <button className={css.button} type="button" onClick={handleLogin}>
+          <button className={css.button} type="submit">
             Register
           </button>
           <div className={css.bottomTextBox}>

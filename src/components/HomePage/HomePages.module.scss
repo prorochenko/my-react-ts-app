@@ -1,7 +1,8 @@
 @import '../../assets/styles/index.scss';
 
-.header {
+.title {
   margin-top: 55px;
+  margin-left: 55px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
@@ -23,7 +24,7 @@
     width: 562px;
     height: 491px;
     top: 30px;
-    right: -130px;
+    right: -85px;
     z-index: 2;
   }
 }
