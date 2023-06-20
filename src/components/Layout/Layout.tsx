@@ -6,21 +6,18 @@ import { Suspense } from 'react';
 // import css from './Layout.module.scss';
 import LoadingComponent from '../Loader/Loader';
 import css from './Layout.module.scss';
+import { HomePage } from '../HomePage/HomePage';
 
 const Layout = () => {
   return (
-    // <Suspense fallback={<LoadingComponent />}>
-    <div>
-      {/* <Suspense fallback={<LoadingComponent />}> */}
+    <div className={css.background}>
       <AppBar />
-      {/* </Suspense> */}
-      <div>
+      <div className={css.elements}>
+        <HomePage />
         <Suspense fallback={<LoadingComponent />}>
           <Outlet />
         </Suspense>
-        {/* <RightSideBar /> */}
       </div>
-      {/* <Toaster position="top-right" reverseOrder={false} /> */}
     </div>
   );
 };

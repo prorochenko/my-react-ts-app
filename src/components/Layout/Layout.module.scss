@@ -1,4 +1,4 @@
-@import 'assets/styles/index.scss';
+@import '../../assets/styles/index.scss';
 
 .box {
   display: grid;
@@ -14,4 +14,15 @@
     grid-template-columns: 1fr 517px;
     align-items: start;
   }
+}
+
+.background {
+  background-color: var(--main-background-color);
+  width: 100%;
+  height: 100dvh;
+}
+
+.elements {
+  display: flex;
+  justify-content: space-between;
 }

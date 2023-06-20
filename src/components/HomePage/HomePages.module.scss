@@ -1,0 +1,14 @@
+@import '../../assets/styles/index.scss';
+
+.header {
+  margin-top: 55px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 70px;
+  letter-spacing: 0.08em;
+  color: var(--main-header-color);
+
+  width: 600px;
+}

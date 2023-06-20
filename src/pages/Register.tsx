@@ -1,10 +1,10 @@
 import RegisterForm from '../components/RegisterForm/RegisterForm';
 
-export default function Login() {
+export default function Register() {
   return (
     <div>
-      <meta name="description" content="Login page" />
-      <title>Login</title>
+      <meta name="description" content="Register page" />
+      <title>Register</title>
       <RegisterForm />
     </div>
   );
