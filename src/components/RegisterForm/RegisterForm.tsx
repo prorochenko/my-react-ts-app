@@ -1,15 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setStatusUser } from '../../redux/authSlice';
+import { NavLink } from 'react-router-dom';
+
 import { selectIsLoggedIn } from '../../redux/authSelectors';
 import css from './RegisterForm.module.scss';
-import { NavLink } from 'react-router-dom';
+import { setStatusUser } from '../../redux/authSlice';
 
 const RegisterForm: React.FC = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
-  console.log(isLoggedIn);
 
   const handleLogin = () => {
     dispatch(setStatusUser(true));

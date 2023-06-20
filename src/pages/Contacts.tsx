@@ -1,16 +1,15 @@
-import React, { useEffect, Suspense } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 import { selectIsLoggedIn } from '../redux/authSelectors';
-
-import { LoginForm } from '../components/LoginForm/LoginForm';
-
-export default function Login() {
+import { ContactsForm } from '../components/ContactsForm/ContactsForm';
+export default function Contacts() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (!isLoggedIn) {
       navigate('/');
       return;
     }
@@ -20,7 +19,7 @@ export default function Login() {
     <div>
       <meta name="description" content="Login page" />
       <title>Login</title>
-      <LoginForm />
+      <ContactsForm />
     </div>
   );
 }

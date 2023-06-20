@@ -10,11 +10,6 @@ const Login = lazy(() => import('./pages/Login'));
 const Home = lazy(() => import('./pages/Start'));
 
 const App: React.FC = () => {
-  // const [todos, setTodos] = useState<IItem[]>([]);
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-
-  console.log('app', isLoggedIn);
-
   return (
     <>
       <Routes>

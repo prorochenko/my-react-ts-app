@@ -8,19 +8,24 @@ import css from './LoginForm.module.scss';
 
 export const LoginForm: React.FC = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  console.log('login', isLoggedIn);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
 
-  const handleLogin = () => {
+    const form = e.currentTarget as HTMLFormElement;
+    const emailInput = form.elements.namedItem('email') as HTMLInputElement;
+    const passwordInput = form.elements.namedItem('password') as HTMLInputElement;
+    console.log('email:', emailInput.value, 'password:', passwordInput.value);
     dispatch(setStatusUser(true));
+    form.reset();
   };
 
   return (
     <div className={css.mainBox}>
       <div className={css.elements}>
         <p className={css.title}>Log in</p>
-        <form autoComplete="off">
+        <form onSubmit={handleSubmit} autoComplete="off">
           <div className={css.inputList}>
             <label htmlFor="email">
               <input
@@ -44,7 +49,7 @@ export const LoginForm: React.FC = () => {
               />
             </label>
           </div>
-          <button className={css.button} type="button" onClick={handleLogin}>
+          <button className={css.button} type="submit">
             Login
           </button>
           <div className={css.bottomTextBox}>

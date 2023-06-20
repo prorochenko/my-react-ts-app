@@ -8,12 +8,6 @@ import { UserMenu } from '../UserNav/UserNav';
 export const AppBar: React.FC = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  console.log(isLoggedIn);
-
-  // const handleLogin = () => {
-  //   dispatch(setStatusUser(false));
-  // };
-
   return (
     <header>
       <div>
