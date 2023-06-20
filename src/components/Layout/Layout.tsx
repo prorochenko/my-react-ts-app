@@ -4,7 +4,8 @@ import { AppBar } from '../AppBar/AppBar';
 import { Suspense } from 'react';
 // import { RightSideBar } from './RightSideBar/RightSideBar';
 // import css from './Layout.module.scss';
-// import LoadingComponent from './Loader/Loader.jsx';
+import LoadingComponent from '../Loader/Loader';
+import css from './Layout.module.scss';
 
 const Layout = () => {
   return (

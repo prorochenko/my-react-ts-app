@@ -4,9 +4,9 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import { selectIsLoggedIn } from './redux/authSelectors';
-import RegisterForm from './components/RegisterForm/RegisterForm';
 
-const Login = lazy(() => import('./pages/login'));
+const Register = lazy(() => import('./pages/Register'));
+const Login = lazy(() => import('./pages/Login'));
 
 const App: React.FC = () => {
   // const [todos, setTodos] = useState<IItem[]>([]);
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           {/* <Route index element={<Navigate to="/login" />} /> */}
           <Route path="login" element={<Login />} />
-          <Route path="register" element={<RegisterForm />} />
+          <Route path="register" element={<Register />} />
           {/* <Route path="calculator" element={<Calculator />} /> */}
           {/* <Route path="diary" element={<Diary />} /> */}
         </Route>

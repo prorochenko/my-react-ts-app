@@ -1,10 +1,10 @@
-import PulseLoader from 'react-spinners/ClipLoader';
+import { InfinitySpin } from 'react-loader-spinner';
 import css from './Loader.module.scss';
 
 export default function LoadingComponent() {
   return (
     <div className={css.loader}>
-      <PulseLoader color="#fc842d" />
+      <InfinitySpin color="#fc842d" />
     </div>
   );
 }
