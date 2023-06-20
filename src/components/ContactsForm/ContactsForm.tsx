@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import ModalUniversal from '../Modal/Modal';
 import { Button } from '@chakra-ui/react';
-
+import { selectShowModal } from '../../redux/authSelectors';
+import { setStatusModal } from '../../redux/authSlice';
 import LoadingComponent from '../Loader/Loader';
 import { selectIsLoggedIn } from '../../redux/authSelectors';
 
@@ -15,8 +16,16 @@ import css from './ContactsForm.module.scss';
 const notify = () => toast('Good Job! 👏');
 
 export const ContactsForm: React.FC = () => {
+  const isShowModal = useSelector(selectShowModal);
+  const dispatch = useDispatch();
+
+  const onOpenModal = () => {
+    dispatch(setStatusModal(true));
+  };
+
   return (
     <>
+      {isShowModal && <ModalUniversal />}
       <div className={css.mainBox}>
         <h1 className={css.header}>Phonebook</h1>
         <div className={css.contactsMenu}>
@@ -74,6 +83,9 @@ export const ContactsForm: React.FC = () => {
         </div>
         <button className={css.btn} type="button" onClick={notify}>
           press me
+        </button>
+        <button className={css.btn} onClick={onOpenModal}>
+          Modal Window
         </button>
         <div>
           <ToastContainer />

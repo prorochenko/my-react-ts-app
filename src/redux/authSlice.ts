@@ -25,8 +25,11 @@ const authSlice = createSlice({
     setStatusUser(state, action) {
       state.isLoggedIn = action.payload;
     },
+    setStatusModal: (state, action) => {
+      state.showModal = action.payload;
+    },
   },
 });
 
-export const { setStatusUser } = authSlice.actions;
+export const { setStatusUser, setStatusModal } = authSlice.actions;
 export const authReducer = authSlice.reducer;
