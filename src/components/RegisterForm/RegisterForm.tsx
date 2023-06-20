@@ -22,11 +22,18 @@ const RegisterForm: React.FC = () => {
         <form autoComplete="off">
           <div className={css.inputList}>
             <label htmlFor="Full Name">
-              <input className={css.input} required type="text" placeholder="Full Name" />
+              <input
+                className={css.input}
+                id="Full Name"
+                required
+                type="text"
+                placeholder="Full Name"
+              />
             </label>
             <label htmlFor="email">
               <input
                 required
+                id="email"
                 className={css.input}
                 autoComplete="email"
                 type="email"
@@ -37,6 +44,7 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="password">
               <input
                 required
+                id="password"
                 className={css.input}
                 type="password"
                 name="password"

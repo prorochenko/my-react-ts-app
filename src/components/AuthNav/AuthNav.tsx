@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import css from './AuthNav.module.scss';
 
 const NavItems = styled(NavLink)`
   color: #9b9faa;
   text-decoration: none;
   &.active {
-    color: #212121;
+    color: #000;
   }
   :hover:not(.active),
   :focus-visible:not(.active) {
@@ -15,9 +16,13 @@ const NavItems = styled(NavLink)`
 
 export const AuthNav = () => {
   return (
-    <div>
-      <NavItems to="login">SIGN IN</NavItems>
-      <NavItems to="register">Registration</NavItems>
+    <div className={css.navBar}>
+      <NavItems to="login" className={css.button}>
+        Login
+      </NavItems>
+      <NavItems to="register" className={css.button}>
+        Registration
+      </NavItems>
     </div>
   );
 };

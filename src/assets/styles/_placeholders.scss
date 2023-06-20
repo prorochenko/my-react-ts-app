@@ -32,9 +32,9 @@
   justify-content: center;
   cursor: pointer;
   background: #ffffff;
-  border: 2px solid #fc842d;
+  border: 2px solid #a4d9dc;
   border-radius: 30px;
-  color: #fc842d;
+  color: #a4d9dc;
 
   font-weight: 700;
   font-size: 14px;
@@ -48,10 +48,10 @@
   transform: translate(0, 0);
 
   &:hover:not(.active) {
-    box-shadow: 0px 3px 10px rgba(252, 132, 45, 0.7);
+    box-shadow: 0px 3px 10px #84f1f7;
   }
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0px 4px 13px rgba(252, 132, 45, 0.5);
+    box-shadow: 0px 4px 13px #a9d6d8;
   }
 }

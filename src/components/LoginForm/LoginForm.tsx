@@ -27,6 +27,7 @@ export const LoginForm: React.FC = () => {
                 required
                 className={css.input}
                 autoComplete="email"
+                id="email"
                 type="email"
                 name="email"
                 placeholder="E-mail Address "
@@ -35,6 +36,7 @@ export const LoginForm: React.FC = () => {
             <label htmlFor="password">
               <input
                 required
+                id="password"
                 className={css.input}
                 type="password"
                 name="password"
