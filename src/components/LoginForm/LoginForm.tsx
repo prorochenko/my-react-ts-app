@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStatusUser } from '../../redux/authSlice';
 import { selectIsLoggedIn } from '../../redux/authSelectors';
+import css from './LoginForm.module.scss';
 
 export const LoginForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={css.mainBox}>
       <input type="text" />
       <button type="button" onClick={handleLogin}>
         Login

@@ -1,0 +1,11 @@
+@import '../../assets/styles/index.scss';
+
+.mainBox {
+  background-color: var(--login-and-reg-background);
+  width: 640px;
+  height: 100vh;
+  border-radius: 70px 0px 0px 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
