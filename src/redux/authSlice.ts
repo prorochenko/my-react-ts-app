@@ -1,11 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchTasks } from './operations';
 
-const authInitialState = {
+interface AuthState {
+  user: {
+    username: null | string;
+    email: null | string;
+    id: null | string;
+  };
+  token: null | string;
+  isLoggedIn: boolean;
+  isRefreshing: boolean;
+  sid: string;
+  refreshToken: string;
+  isRegister: boolean;
+  paramsRegisterUser: null | any;
+  isLoading: boolean;
+  showModal: boolean;
+  error: string | null;
+  items: string;
+}
+
+const authInitialState: AuthState = {
   user: {
     username: null,
     email: null,
     id: null,
-    userData: { notAllowedProducts: [] },
   },
   token: null,
   isLoggedIn: false,
@@ -14,8 +33,10 @@ const authInitialState = {
   refreshToken: '',
   isRegister: false,
   paramsRegisterUser: null,
-
+  isLoading: false,
   showModal: false,
+  error: null,
+  items: '',
 };
 
 const authSlice = createSlice({
@@ -28,6 +49,21 @@ const authSlice = createSlice({
     setStatusModal: (state, action) => {
       state.showModal = action.payload;
     },
+  },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchTasks.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(fetchTasks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchTasks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string | null;
+      });
   },
 });
 
